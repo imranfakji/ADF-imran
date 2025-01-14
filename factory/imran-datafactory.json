@@ -1,0 +1,9 @@
+{
+	"name": "imran-datafactory",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "45a0fc75-3a4a-49fd-9bc6-83c9c6d86cef",
+		"tenantId": "a389e60d-9488-4bda-b2c5-074302583f0a"
+	}
+}
