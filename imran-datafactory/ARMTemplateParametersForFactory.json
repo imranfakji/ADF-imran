@@ -8,14 +8,26 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"value": ""
+		},
+		"CosmosDbConAirBnBProject_connectionString": {
+			"value": ""
+		},
 		"Snowflake1_password": {
 			"value": ""
+		},
+		"ADLSConForAirBnBProject_properties_typeProperties_url": {
+			"value": "https://imranazureprojects.dfs.core.windows.net/"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://imransaadls.dfs.core.windows.net/"
 		},
 		"Snowflake1_properties_typeProperties_database": {
 			"value": "IMRAN_AZURE_ADF"
+		},
+		"Snowflake1_properties_typeProperties_role": {
+			"value": "ACCOUNTADMIN"
 		}
 	}
 }

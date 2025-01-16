@@ -11,9 +11,21 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
+		"AzureSynapseAnalytics1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
+		},
+		"CosmosDbConAirBnBProject_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbConAirBnBProject'"
+		},
 		"Snowflake1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'Snowflake1'"
+		},
+		"ADLSConForAirBnBProject_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://imranazureprojects.dfs.core.windows.net/"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
@@ -22,6 +34,10 @@
 		"Snowflake1_properties_typeProperties_database": {
 			"type": "string",
 			"defaultValue": "IMRAN_AZURE_ADF"
+		},
+		"Snowflake1_properties_typeProperties_role": {
+			"type": "string",
+			"defaultValue": "ACCOUNTADMIN"
 		},
 		"containerUri": {
 			"type": "string",
@@ -53,14 +69,26 @@
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
+					"AzureSynapseAnalytics1_connectionString": {
+						"value": "[parameters('AzureSynapseAnalytics1_connectionString')]"
+					},
+					"CosmosDbConAirBnBProject_connectionString": {
+						"value": "[parameters('CosmosDbConAirBnBProject_connectionString')]"
+					},
 					"Snowflake1_password": {
 						"value": "[parameters('Snowflake1_password')]"
+					},
+					"ADLSConForAirBnBProject_properties_typeProperties_url": {
+						"value": "[parameters('ADLSConForAirBnBProject_properties_typeProperties_url')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
 					"Snowflake1_properties_typeProperties_database": {
 						"value": "[parameters('Snowflake1_properties_typeProperties_database')]"
+					},
+					"Snowflake1_properties_typeProperties_role": {
+						"value": "[parameters('Snowflake1_properties_typeProperties_role')]"
 					}
 				}
 			},
