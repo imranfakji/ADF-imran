@@ -22,17 +22,6 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "BadRecordsADLS",
-						"type": "DatasetReference"
-					},
-					"name": "sinktobadrecords",
-					"rejectedDataLinkedService": {
-						"referenceName": "ADLSConForAirBnBProject",
-						"type": "LinkedServiceReference"
-					}
-				},
-				{
-					"dataset": {
 						"referenceName": "CustomerFactDataSynapse",
 						"type": "DatasetReference"
 					},
@@ -113,8 +102,8 @@
 				"          check_in_date = check_in_date,",
 				"          check_out_date = check_out_date,",
 				"          booking_date = booking_date,",
-				"          amount = amount,",
-				"          currency = currency) ~> DerivedColumns",
+				"          currency = currency,",
+				"          amount = amount) ~> DerivedColumns",
 				"DerivedColumns, SynapseTableForLookUp lookup(DerivedColumns@booking_id == SynapseTableForLookUp@booking_id,",
 				"     multiple: false,",
 				"     pickup: 'first',",
@@ -132,7 +121,6 @@
 				"          amount = DerivedColumns@amount,",
 				"          booking_id = DerivedColumns@booking_id,",
 				"          currency = DerivedColumns@currency,",
-				"          property_location,",
 				"          booking_date = DerivedColumns@booking_date,",
 				"          stay_duration = DerivedColumns@stay_duration,",
 				"          booking_year = DerivedColumns@booking_year,",
@@ -159,14 +147,6 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> FinalSelect",
-				"split1@badRecords sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     emptyLinesAsHeader: 1,",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sinktobadrecords",
 				"FinalSelect sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
@@ -197,7 +177,7 @@
 				"     allowCopyCommand: true,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     saveOrder: 1,",
+				"     saveOrder: 0,",
 				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
