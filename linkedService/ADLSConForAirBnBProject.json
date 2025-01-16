@@ -1,0 +1,10 @@
+{
+	"name": "ADLSConForAirBnBProject",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://imranazureprojects.dfs.core.windows.net/"
+		}
+	}
+}
