@@ -25,7 +25,11 @@
 						"referenceName": "BadRecordsADLS",
 						"type": "DatasetReference"
 					},
-					"name": "sinktobadrecords"
+					"name": "sinktobadrecords",
+					"rejectedDataLinkedService": {
+						"referenceName": "ADLSConForAirBnBProject",
+						"type": "LinkedServiceReference"
+					}
 				},
 				{
 					"dataset": {
@@ -157,6 +161,7 @@
 				"     skipDuplicateMapOutputs: true) ~> FinalSelect",
 				"split1@badRecords sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     emptyLinesAsHeader: 1,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
@@ -192,6 +197,7 @@
 				"     allowCopyCommand: true,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1,",
 				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 			]
 		}
